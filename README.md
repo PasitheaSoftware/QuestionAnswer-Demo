@@ -45,7 +45,7 @@ Now you can sync your gradle configuration. Once it is done you'll have access t
 
 # Contributors
 We are looking for contributors to help us to create amazing vocal modules and apps but also people who want to be involved in the development of the core framework.\
-[Contact us](contact@logicielpasithea.fr) if your interested.
+[Contact us](contact@logicielpasithea.fr) if you're interested.
 
 
 
