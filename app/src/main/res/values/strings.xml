@@ -13,6 +13,8 @@
     <string name="action_tv_contentdescription">Texte à afficher pour le champ action</string>
     <string name="answer_tv_contentdescription">Texte à afficher pour le champ réponse</string>
     <string name="question_tv_contentdescription">Texte à afficher pour le champ question</string>
+    <string name="btn_text">Redémarrer</string>
+    <string name="btn_contentdescription">Bouton pour relancer la reconnaissance vocale</string>
     <string name="main_layout">Fenêtre principale</string>
 
     <string name="answer_yes">oui</string>

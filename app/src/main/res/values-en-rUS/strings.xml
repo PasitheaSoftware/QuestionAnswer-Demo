@@ -19,4 +19,6 @@
     <string name="speech_sad">I\'m sad. It seems nobody like me</string>
     <string name="action_sad">Display the sad face</string>
     <string name="action_happy">Display the happy face</string>
+    <string name="btn_contentdescription">Button to restart the voice recognition</string>
+    <string name="btn_text">Restart</string>
 </resources>

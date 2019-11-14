@@ -122,4 +122,16 @@
         app:srcCompat="@drawable/logo_barres"
         tools:visibility="visible" />
 
+    <Button
+        android:id="@+id/restart_btn"
+        android:contentDescription="@string/btn_contentdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/action_tv"
+        app:layout_constraintVertical_bias="0.13" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

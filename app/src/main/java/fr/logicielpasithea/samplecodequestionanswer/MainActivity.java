@@ -20,6 +20,8 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private static TextView AnswerTv;
     private static TextView ActionTv;
     private static ImageView EmojiIv;
+    private static Button RestartBtn;
 
     private Locale mLocale;
 
@@ -57,8 +60,16 @@ public class MainActivity extends AppCompatActivity {
         AnswerTv = (TextView) findViewById(R.id.answer_tv);
         ActionTv = (TextView) findViewById(R.id.action_tv);
         EmojiIv = (ImageView) findViewById(R.id.emoji_iv);
+        RestartBtn = (Button) findViewById(R.id.restart_btn);
 
         mLocale = getResources().getConfiguration().locale;
+
+        RestartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startAnswer();
+            }
+        });
 
         answerWords[0] = getString(R.string.answer_yes);
         answerWords[1] = getString(R.string.answer_no);
@@ -70,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         checkRecordAudioPermissions();
     }
+
 
     /*
     StartAnswer() starts the question/answer session.
@@ -151,13 +163,7 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_REQUEST);
             Log.i(TAG, "checkRecordAudioPermissions: end");
         } else {
-            mPasithea = new PasitheaBuilder().setValues(this, this).
-                    setInitListener(new onInitListener() {
-                @Override
-                public void InitDone() {
-                    startAnswer();
-                }
-            }).build();
+            setPasithea();
             Log.i(TAG, "checkStoragePermissions: end");
         }
     }
@@ -169,14 +175,18 @@ public class MainActivity extends AppCompatActivity {
             checkStoragePermissions();
         }
         if(i == STORAGE_REQUEST){
-            mPasithea = new PasitheaBuilder().setValues(this, this).
-                    setInitListener(new onInitListener() {
-                @Override
-                public void InitDone() {
-                    startAnswer();
-                }
-            }).build();
+            setPasithea();
         }
+    }
+
+    private Pasithea setPasithea(){
+        return mPasithea = new PasitheaBuilder().setValues(this, this).
+                setInitListener(new onInitListener() {
+                    @Override
+                    public void InitDone() {
+                        startAnswer();
+                    }
+                }).build();
     }
 
     @Override
@@ -187,5 +197,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mPasithea.stopPasithea();
     }
 }
