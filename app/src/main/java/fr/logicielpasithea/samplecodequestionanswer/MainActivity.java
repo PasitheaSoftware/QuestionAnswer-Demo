@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
         checkRecordAudioPermissions();
     }
 
-
     /*
     StartAnswer() starts the question/answer session.
     It is set as action triggered by the listener once the configuration is done.
