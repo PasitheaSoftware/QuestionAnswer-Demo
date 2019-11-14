@@ -3,8 +3,6 @@
  * This code is free of use and can be modified without restriction.
  * This sample code is bilingual French/English.
  *
- * Before testing it, you must contact us to request a temporary password to connect to our maven repository.
- *
  * @author Pasithea Software (contact@logicielpasthiea.fr)
  *
  */
