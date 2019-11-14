@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Locale mLocale;
 
-    private static String[] answerWords;
+    private static String[] answerWords = new String[2];
     private static String question;
 
     Pasithea mPasithea;
@@ -60,11 +60,9 @@ public class MainActivity extends AppCompatActivity {
 
         mLocale = getResources().getConfiguration().locale;
 
-        answerWords = new String[2];
         answerWords[0] = getString(R.string.answer_yes);
         answerWords[1] = getString(R.string.answer_no);
         question = getString(R.string.question);
-
     }
 
     @Override
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     /*
     StartAnswer() starts the question/answer session.
     It is set as action triggered by the listener once the configuration is done.
-     */
+    */
     public void startAnswer(){
         // This method is called after the initialization is done.
         // So we can create an instance of PASITHEA with getInstance().
