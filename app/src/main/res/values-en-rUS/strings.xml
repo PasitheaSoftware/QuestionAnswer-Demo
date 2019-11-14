@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_triggered">Action triggered</string>
+    <string name="answer_label">Answer :</string>
+    <string name="answer_received">Answer received</string>
+    <string name="question_asked">Question asked</string>
+    <string name="emoji_contentdescription">Emoji to display when action is triggered</string>
+    <string name="action_label_contentdescription">Action field label</string>
+    <string name="action_tv_contentdescription">Action field text to display</string>
+    <string name="answer_label_contentdescription">Answer field label</string>
+    <string name="answer_tv_contentdescription">Answer field text to display</string>
+    <string name="question_label_contentdescription">Question field label</string>
+    <string name="question_tv_contentdescription">Question field text to display</string>
+    <string name="main_layout">Main layout</string>
+    <string name="answer_no">no</string>
+    <string name="answer_yes">yes</string>
+    <string name="question">Do you want to continue ?</string>
+    <string name="speech_happy">I\'m happy, finally you like me.</string>
+    <string name="speech_sad">I\'m sad. It seems nobody like me</string>
+    <string name="action_sad">Display the sad face</string>
+    <string name="action_happy">Display the happy face</string>
+</resources>

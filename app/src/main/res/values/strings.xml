@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name" translatable="false">SampleCodeQuestionAnswer</string>
+    <string name="emoji_contentdescription">Emoji à afficher quand l\'action est déclenchée</string>
+    <string name="action_label" translatable="false">Action :</string>
+    <string name="action_triggered">Action déclenchée</string>
+    <string name="question_label" translatable="false">Question :</string>
+    <string name="question_asked">Question posée</string>
+    <string name="answer_label">Réponse :</string>
+    <string name="answer_received">Réponse reçue</string>
+    <string name="action_label_contentdescription">Label du champ action</string>
+    <string name="answer_label_contentdescription">Label du champ réponse</string>
+    <string name="question_label_contentdescription">Label du champ question</string>
+    <string name="action_tv_contentdescription">Texte à afficher pour le champ action</string>
+    <string name="answer_tv_contentdescription">Texte à afficher pour le champ réponse</string>
+    <string name="question_tv_contentdescription">Texte à afficher pour le champ question</string>
+    <string name="main_layout">Fenêtre principale</string>
+
+    <string name="answer_yes">oui</string>
+    <string name="answer_no">non</string>
+    <string name="question">Voulez-vous continuer ?</string>
+    <string name="action_happy">Affiche l\'émoji content</string>
+    <string name="action_sad">Affiche l\'émoji triste</string>
+    <string name="speech_happy">Je suis contente vous m\'aimez bien</string>
+    <string name="speech_sad">Je suis triste, personne ne m\'aime</string>
+</resources>
