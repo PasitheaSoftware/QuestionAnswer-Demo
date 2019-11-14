@@ -1,13 +1,14 @@
 /**
  * Sample code for the question/answer function of PASITHEA.
  * This code is free of use and can be modified without restriction.
+ * This sample code is bilingual French/English.
  *
- * @author Pasithea Software
+ * Before testing it, you must contact us to request a temporary password to connect to our maven repository.
+ *
+ * @author Pasithea Software (contact@logicielpasthiea.fr)
  *
  */
 package fr.logicielpasithea.samplecodequestionanswer;
-
-
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -77,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
     It is set as action triggered by the listener once the configuration is done.
      */
     public void startAnswer(){
-        Pasithea answerPasithea = Pasithea.getInstance();
+        // This method is called after the initialization is done.
+        // So we can create an instance of PASITHEA with getInstance().
+        final Pasithea answerPasithea = Pasithea.getInstance();
         answerPasithea.startQuestionAnswer(question, answerWords, new onAnswerListener() {
 
             //Action when the first keyword is detected.
@@ -87,10 +90,13 @@ public class MainActivity extends AppCompatActivity {
                 AnswerTv.setText(getString(R.string.answer_yes));
                 ActionTv.setText(getString(R.string.action_happy));
                 EmojiIv.setImageResource(R.drawable.smile_android_emoji);
+                /*The voice message can overlap the GUI changes.
+                To avoid that we postpone it with a Handler().postDelayed(Runnable).
+                 */
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        mPasithea.saySomething(getString(R.string.speech_happy));
+                        answerPasithea.saySomething(getString(R.string.speech_happy));
                     }
                 }, 500);
             }
@@ -102,10 +108,14 @@ public class MainActivity extends AppCompatActivity {
                 AnswerTv.setText(getString(R.string.answer_no));
                 ActionTv.setText(getString(R.string.action_sad));
                 EmojiIv.setImageResource(R.drawable.sad_android_emoji);
+
+                /*The voice message can overlap the GUI changes.
+                To avoid that we postpone it with a Handler().postDelayed(Runnable).
+                 */
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        mPasithea.saySomething(getString(R.string.speech_sad));
+                        answerPasithea.saySomething(getString(R.string.speech_sad));
                     }
                 }, 500);
             }
@@ -113,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
             //Action triggered when the speech recognition engine does not recognize the spoken keyword.
             @Override
             public void onAnswerUnk() {
-                mPasithea.unkAnswer();
-                mPasithea.restartQuestionAnswer();
+                answerPasithea.unkAnswer();
+                answerPasithea.restartQuestionAnswer();
             }
         });
     }
@@ -122,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
     /*
      Because the permission check must be done inside an activity, we have to execute it here.
      This code needs the RECORD_AUDIO and READ_EXTERNAL_STORAGE permissions.
-     We set the initialiation of PASITHEA as czllback method once the check is done.
+     We set the initialiation of PASITHEA as callback method.
      */
     private void checkRecordAudioPermissions() {
         Log.i(TAG, "checkRecordAudioPermissions: start");
