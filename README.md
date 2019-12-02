@@ -3,7 +3,7 @@ Pasithea is a framework created by Pasithea Software. This framework helps devel
 PASITHEA provides a set of functions to do voice integration in an app. These functions cover the speech recognition and the speech synthesis. 
 
 # PASITHEA documentation
-The javadoc for each classes and interfaces are available [online](http://logicielpasithea.fr/documentation/)
+The javadoc for each classes and interfaces are available [online](http://logicielpasithea.fr/Pasithea/framework/documentation/)
 
 # The sample code
 This sample code will provide you a basic single activity application to demonstrate the usage of the question/answer function of PASITHEA.\
@@ -13,7 +13,7 @@ Depending on the answer detected the app wil change the image on top of the scre
 ### How to use this demo ?
 Clone this repository locally and open the project in your IDE. This demo is provided with a test version of the framework which stop working after December 31st 2019. [Contact us](contact@logicielpasithea.fr) if you want to extend your test period. You can modify the code and you can create your own app to test PASITHEA.
 
-Refer to the [documentation](http://logicielpasithea.fr/documentation/) but basically the app will initialize the framework with a builder.
+Refer to the [documentation](http://logicielpasithea.fr/Pasithea/framework/documentation/) but basically the app will initialize the framework with a builder.
   ![PASITHEA initialization](http://logicielpasithea.fr/img/initialization.PNG)
 
 It uses a listener to configure an action to trigger once the initialization is done. The use of this listener is optional.
